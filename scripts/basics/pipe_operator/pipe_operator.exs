@@ -44,4 +44,9 @@ defmodule ComPipe do
   def tudo(n1,n2) do
     soma(n1,n2) |> subtracao(n2) |> multiplicacao(n2) |> divisao(n2)
   end
+
+  def inspecionando(n1,n2) do
+    tudo(n1,n2) |> IO.inspect()
+  end
+
 end
