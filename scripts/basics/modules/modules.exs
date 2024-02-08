@@ -113,4 +113,18 @@ last([1, 2, 3])
 # 3
 
 
-#ONDE PAREI... Modules -> Filtering
+#Filtering
+#Faz import da lib mas não dela inteira:
+import List, only: [last: 1]
+first([1, 2, 3]) #error: undefined function first/1 (there is no such import)
+last([1,2,3,4,5,6]) #6
+
+import List, except: [last: 1]
+first([1, 2, 3]) #1
+last([1, 2, 3]) #error: undefined function last/1 (there is no such import)
+
+#também pode importar só as funcoes ou só as macros da lib
+import List, only: :functions
+import List, only: :macros
+
+
